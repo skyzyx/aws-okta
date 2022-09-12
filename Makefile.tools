@@ -21,7 +21,7 @@ rpmbuild-darwin:
 	brew install rpm
 
 sha256sum-darwin:
-	brew install coreutils # && ln -s $$(which gsha256sum) /usr/local/bin/sha256sum
+	sudo brew install coreutils # && ln -s $$(which gsha256sum) /usr/local/bin/sha256sum
 
 github-release:
 	GO111MODULE=off go get -u github.com/aktau/github-release
