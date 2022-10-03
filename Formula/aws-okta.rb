@@ -9,7 +9,7 @@ class AwsOkta < Formula
   depends_on "go" => :build
 
   def install
-    ENV["VERSION"]=shell_output('git describe --tags --always --dirty="-dev"')
+    ENV["VERSION"]=`git describe --tags --always --dirty="-dev"`
     ENV["GOOS"]="darwin"
     ENV["GOARCH"]="amd64"
     ENV["GO111MODULE"]="on"
