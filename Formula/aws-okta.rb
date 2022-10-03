@@ -9,11 +9,15 @@ class AwsOkta < Formula
   depends_on "go" => :build
 
   def install
+    ENV.deparallelize
+
+    mkdir_p "bin"
+    
     # https://stackoverflow.com/questions/13214029/go-build-cannot-find-package-even-though-gopath-is-set
     system "go", "mod", "vendor"
-    system "go", "build", "-mod=vendor", "-o", "./aws-okta.bin", "./..."
+    system "go", "build", "-mod=vendor", "-o", "bin", "./..."
     
-    bin.install "aws-okta.bin", "aws-okta"
+    bin.install "bin/aws-okta" "aws-okta"
   end
 
   test do
