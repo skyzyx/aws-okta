@@ -11,9 +11,9 @@ class AwsOkta < Formula
   def install
     # https://stackoverflow.com/questions/13214029/go-build-cannot-find-package-even-though-gopath-is-set
     system "go", "mod", "vendor"
-    system "go", "build", "-mod=vendor", "-o", "aws-okta", "./..."
+    system "go", "build", "-mod=vendor", "-o", "aws-okta.bin", "./..."
     
-    bin.install "aws-okta"
+    bin.install "aws-okta.bin", "aws-okta"
   end
 
   test do
