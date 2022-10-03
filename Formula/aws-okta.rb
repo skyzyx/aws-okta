@@ -17,7 +17,7 @@ class AwsOkta < Formula
     system "go", "mod", "vendor"
     system "go", "build", "-mod=vendor", "-o", "bin", "./..."
     
-    bin.install "bin/aws-okta" "aws-okta"
+    bin.install "bin/aws-okta" => "aws-okta"
   end
 
   test do
