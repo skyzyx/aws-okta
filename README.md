@@ -15,5 +15,13 @@ I need a build that is `brew install`-able, since Homebrew removed [segmentio/aw
 ## Installation
 
 ```bash
+brew tap skyzyx/aws-okta https://github.com/skyzyx/aws-okta
+brew install skyzyx/aws-okta/aws-okta --head
+```
 
+To uninstall, run:
+
+```brew
+brew uninstall skyzyx/aws-okta/aws-okta
+brew untap skyzyx/aws-okta
 ```
