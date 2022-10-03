@@ -9,6 +9,7 @@ class AwsOkta < Formula
   depends_on "go" => :build
 
   def install
+    system "go", "mod", "vendor"
     system "go", "build", "-mod=vendor", "-o", "aws-okta", "./..."
   end
 
