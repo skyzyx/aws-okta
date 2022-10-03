@@ -9,7 +9,11 @@ class AwsOkta < Formula
   depends_on "go" => :build
 
   def install
-    system "make"
+    ENV["VERSION"]=shell_output('git describe --tags --always --dirty="-dev"')
+    ENV["GOOS"]="darwin"
+    ENV["GOARCH"]="amd64"
+    ENV["GO111MODULE"]="on"
+    system "go build -mod=vendor -o aws-okta"
   end
 
   test do
