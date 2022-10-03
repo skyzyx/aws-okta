@@ -10,7 +10,7 @@ class AwsOkta < Formula
 
   def install
     system "go", "mod", "vendor"
-    system "go", "build", "-mod=vendor", "-o", "aws-okta", "./..."
+    system "go", "build", "-mod=vendor", "./..."
   end
 
   test do
