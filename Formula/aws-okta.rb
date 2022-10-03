@@ -13,7 +13,7 @@ class AwsOkta < Formula
     ENV["GOOS"]="darwin"
     ENV["GOARCH"]="amd64"
     ENV["GO111MODULE"]="on"
-    system "go build -mod=vendor -o aws-okta"
+    system "go", "build", "-mod=vendor", "-o", "aws-okta", "./..."
   end
 
   test do
